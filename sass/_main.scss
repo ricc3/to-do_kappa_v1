@@ -1,0 +1,220 @@
+@use '_colors' as c;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: c.$mainBgc;
+	color: c.$mainText;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1.6rem;
+	font-weight: 200;
+	letter-spacing: 0.06em;
+}
+
+a {
+	color: c.$mainLink;
+}
+/* ===================
+HEADER
+=================== */
+.header {
+	&__info {
+		position: relative;
+
+		.ti-info-square-rounded {
+			position: absolute;
+			top: -55px;
+			right: 50%;
+			font-size: 5rem;
+			cursor: pointer;
+			transform: translate(50%, 0%);
+		}
+	}
+	&__productName {
+		margin: 66px auto 33px;
+		width: 100%;
+		font-size: 3rem;
+		text-shadow: 1.5px 1.5px 2px #000;
+		text-align: center;
+		border-bottom: 1px solid c.$secondBgc;
+	}
+	&__palette {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		width: 285px; // = .header__box-img width
+	}
+
+	&__box {
+		position: relative;
+		background-color: c.$secondBgc;
+
+		&-img {
+			width: 285px; // = .header__palette width
+		}
+	}
+
+	&__quest {
+		padding: 2em 1em;
+		background-color: c.$secondBgc;
+
+		&-info1 {
+			padding-bottom: 0.5em;
+		}
+
+		&-info2 {
+			padding: 1em 0 0;
+		}
+
+		p:nth-child(odd) {
+			font-weight: 700;
+		}
+
+		p:nth-child(even) {
+			padding-left: 1.4em;
+		}
+
+		.kappaLinkImg,
+		.armbandLinkImg,
+		.firLinkImg {
+			position: relative;
+
+			&:hover {
+				&::after {
+					content: '';
+					position: absolute;
+					top: 26px;
+					left: 6%;
+					background-repeat: no-repeat;
+					background-size: 100%;
+					display: block;
+					width: 200px;
+					height: 150px;
+					border-radius: 11px;
+					z-index: 1;
+				}
+			}
+		}
+
+		.kappaLinkImg:hover::after {
+			background-image: url(../img/Kappa.webp);
+		}
+
+		.armbandLinkImg:hover::after {
+			background-image: url(../img/DEADSKUL.webp);
+		}
+		.firLinkImg:hover::after {
+			background-image: url(../img/fir.webp);
+			height: 55px;
+		}
+
+		.ti-info-circle {
+			margin: 0.6em 0;
+			padding-right: 0.2em;
+			float: left;
+			font-size: 4rem;
+		}
+	}
+}
+/* ===================
+MAIN
+=================== */
+main {
+	// SECTION 1
+	.section {
+		&__mBox {
+			padding: 2em 0;
+			background-color: c.$bgc1;
+			display: flex;
+			justify-content: center;
+		}
+	}
+	.sectionPadding {
+		padding: 5rem 0;
+	}
+
+	// SECTION 2
+	.section {
+		&__item {
+			margin: 50px 0 0;
+			font-size: 0;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 220px;
+		}
+
+		&__item-img {
+			width: 220px;
+			filter: grayscale(100%);
+			cursor: pointer;
+		}
+
+		&__item-name {
+			padding: 0.1em 0.5em;
+			display: flex;
+			align-items: center;
+			background-color: c.$darkRed;
+			font-size: 1.8rem;
+
+			p:first-child {
+				flex-grow: 1;
+				text-shadow: 1.5px 1.5px 2px #000;
+				cursor: default;
+
+				abbr {
+					padding: 0.5em 0.5em 0.5em 0;
+					cursor: help;
+				}
+			}
+
+			p:last-child {
+				flex-grow: 1;
+				font-size: 2.5rem;
+				display: flex;
+				justify-content: flex-end;
+
+				a {
+					padding: 0.2em 0 0.2em 0.5em;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+/* ===================
+FOOTER
+=================== */
+.footer {
+	margin-top: 77px;
+	background-color: #1e1d22;
+	text-align: center;
+
+	&__wrapper {
+		padding: 2em 1.5em;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 400px;
+	}
+
+	&__upperText {
+		padding-bottom: 1em;
+		font-weight: 750;
+		color: #ffa03b;
+	}
+}

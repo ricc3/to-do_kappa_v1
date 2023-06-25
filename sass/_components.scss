@@ -1,0 +1,91 @@
+@use '_colors' as c;
+/* ===================
+HEADER => components
+=================== */
+.header {
+	&__box-h1 {
+		padding: 0 17px;
+		position: absolute;
+		left: 0;
+		bottom: -13px;
+		display: block;
+		z-index: 11;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		line-height: 30px;
+		text-shadow: 1.5px 1.5px 2px #000;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: -2px;
+			width: 180px;
+			border-top: 30px solid c.$mainBgc;
+			border-left: 0 transparent;
+			border-right: 30px solid transparent;
+			z-index: -2;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0px;
+			width: 179px;
+			border-top: 30px solid #000;
+			border-bottom: 0px solid transparent;
+			border-left: 0 transparent;
+			border-right: 30px solid transparent;
+			z-index: -2;
+		}
+	}
+}
+/* ===================
+MAIN => components
+=================== */
+main {
+	// SECTION 1
+	.section {
+		&__mBox {
+			input[type='text'] {
+				padding: 0.3em 0em;
+				background-color: transparent;
+				border: 0;
+				border-bottom: 2px solid #000;
+				border-bottom-left-radius: 13px;
+				border-bottom-right-radius: 13px;
+				color: c.$mainText;
+				text-shadow: 1.5px 1.5px 2px #000;
+				font-size: 2rem;
+				font-weight: bolder;
+				letter-spacing: 0.2em;
+				text-align: center;
+				width: 266px;
+			}
+
+			input[type='text']:focus {
+				outline: none;
+			}
+
+			input[type='text']::placeholder {
+				text-align: center;
+				color: c.$secondBgc;
+				text-shadow: none;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+//SECTION 2
+main {
+	.section__item {
+		.imgOk {
+			filter: grayscale(0);
+		}
+		.itemOk {
+			background-color: c.$darkGreen;
+		}
+	}
+}

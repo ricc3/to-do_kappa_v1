@@ -1,0 +1,100 @@
+// X-Small = <576px | Small = sm = ≥576px
+// Medium = md = ≥768px | Large = lg = ≥992px
+// Extra large = xl = ≥1200px | Extra extra large = xxl = ≥1400px
+
+/* ===================
+Small = sm = ≥576px
+=================== */
+@media (min-width: 576px) {
+	.header {
+		&__palette {
+			flex-direction: row;
+			width: 530px;
+		}
+
+		&__box {
+			display: flex;
+			align-items: center;
+		}
+
+		&__box-h1 {
+			bottom: 50px;
+		}
+		&__quest-info1:nth-child(1),
+		&__quest-info1:nth-child(2) {
+			display: flex;
+			flex-direction: row;
+		}
+
+		&__notchItemName {
+			padding-left: 26px;
+		}
+	}
+	main {
+		.items {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-end;
+		}
+
+		.section {
+			&__item {
+				margin: 50px 20px 0;
+			}
+		}
+	}
+}
+/* ===================
+Medium = md = ≥768px
+=================== */
+@media (min-width: 768px) {
+	.header {
+		&__palette {
+			width: 666px;
+		}
+
+		&__box-h1 {
+			bottom: 5px;
+		}
+
+		&__box-img {
+			width: 320px;
+		}
+
+		&__quest {
+			.ti-info-circle {
+				margin: 0.3em 0;
+			}
+		}
+
+		&__quest-info1:nth-child(3) {
+			display: flex;
+			flex-direction: row;
+		}
+
+		&__notchItemName {
+			padding-left: 0;
+		}
+	}
+}
+/* ===================
+Large = lg = ≥992px
+=================== */
+@media (min-width: 992px) {
+	.header {
+		&__palette {
+			width: 700px;
+		}
+	}
+}
+/* ===================
+Extra extra large = xxl = ≥1400px
+=================== */
+@media (min-width: 1400px) {
+	.wrapper {
+		margin: 22px auto 0;
+		width: 100%;
+		max-width: 1400px;
+	}
+}
