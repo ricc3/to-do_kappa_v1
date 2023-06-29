@@ -1,7 +1,7 @@
 @use '_colors' as c;
-/* ===================
+/* ===============================
 HEADER => components
-=================== */
+=============================== */
 .header {
 	&__box-h1 {
 		padding: 0 17px;
@@ -42,13 +42,49 @@ HEADER => components
 		}
 	}
 }
-/* ===================
+/* ===============================
 MAIN => components
-=================== */
+=============================== */
+.header__quest {
+	.kappaLinkImg,
+	.armbandLinkImg,
+	.firLinkImg {
+		position: relative;
+
+		&:hover {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 26px;
+				left: 13px;
+				background-repeat: no-repeat;
+				background-size: 100%;
+				display: block;
+				width: 200px;
+				height: 150px;
+				border-radius: 11px;
+				z-index: 1;
+			}
+		}
+	}
+	.kappaLinkImg:hover::after {
+		background-image: url(../img/Kappa.webp);
+	}
+
+	.armbandLinkImg:hover::after {
+		background-image: url(../img/DEADSKUL.webp);
+	}
+	.firLinkImg:hover::after {
+		background-image: url(../img/fir.webp);
+		height: 55px;
+		top: 50px;
+		left: -150px;
+	}
+}
 main {
 	// SECTION 1
 	.section {
-		&__mBox {
+		&__input {
 			input[type='text'] {
 				padding: 0.3em 0em;
 				background-color: transparent;

@@ -263,12 +263,3 @@ const allTasks = () => {
 activation of the function
 =============================== */
 allTasks();
-
-// console.log('Zadania u Prapora: ' + questPrapor.length);
-// console.log('Zadania u Therapist: ' + questTherapist.length);
-// console.log('Zadania u Skiera: ' + questSkier.length);
-// console.log('Zadania u Peacekeeper: ' + questPeacekeeper.length);
-// console.log('Zadania u Mechanic: ' + questMechanic.length);
-// console.log('Zadania u Ragman: ' + questRagman.length);
-// console.log('Zadania u Jaeger: ' + questJaeger.length);
-// console.log('Suma zadań: ' + totalOfTasks.length);

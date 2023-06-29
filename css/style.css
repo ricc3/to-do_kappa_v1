@@ -23,9 +23,9 @@ a {
   color: #ade4ff;
 }
 
-/* ===================
+/* ===============================
 HEADER
-=================== */
+=============================== */
 .header__info {
   position: relative;
 }
@@ -74,36 +74,6 @@ HEADER
 .header__quest p:nth-child(even) {
   padding-left: 1.4em;
 }
-.header__quest .kappaLinkImg,
-.header__quest .armbandLinkImg,
-.header__quest .firLinkImg {
-  position: relative;
-}
-.header__quest .kappaLinkImg:hover::after,
-.header__quest .armbandLinkImg:hover::after,
-.header__quest .firLinkImg:hover::after {
-  content: "";
-  position: absolute;
-  top: 26px;
-  left: 6%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  display: block;
-  width: 200px;
-  height: 150px;
-  border-radius: 11px;
-  z-index: 1;
-}
-.header__quest .kappaLinkImg:hover::after {
-  background-image: url(../img/Kappa.webp);
-}
-.header__quest .armbandLinkImg:hover::after {
-  background-image: url(../img/DEADSKUL.webp);
-}
-.header__quest .firLinkImg:hover::after {
-  background-image: url(../img/fir.webp);
-  height: 55px;
-}
 .header__quest .ti-info-circle {
   margin: 0.6em 0;
   padding-right: 0.2em;
@@ -111,17 +81,29 @@ HEADER
   font-size: 4rem;
 }
 
-/* ===================
+/* ===============================
 MAIN
-=================== */
-main .section__mBox {
-  padding: 2em 0;
-  background-color: #546e7a;
+=============================== */
+main .section__input {
   display: flex;
   justify-content: center;
 }
-main .sectionPadding {
+main .section__youNeed {
+  padding-top: 3em;
+  text-align: center;
+}
+main .section__youNeed p:nth-child(1) {
+  font-weight: 700;
+  font-size: 3rem;
+}
+main .section__youNeed p:nth-child(2) {
+  font-style: italic;
+  font-size: 1rem;
+}
+main .box {
   padding: 5rem 0;
+  margin: 66px 0;
+  background-color: #546e7a;
 }
 main .section__item {
   margin: 50px 0 0;
@@ -168,9 +150,9 @@ main .items {
   align-items: center;
 }
 
-/* ===================
+/* ===============================
 FOOTER
-=================== */
+=============================== */
 .footer {
   margin-top: 77px;
   background-color: #1e1d22;
@@ -187,10 +169,14 @@ FOOTER
   font-weight: 750;
   color: #ffa03b;
 }
+.footer__bottomText {
+  font-weight: 700;
+  font-size: 2rem;
+}
 
-/* ===================
+/* ===============================
 HEADER => components
-=================== */
+=============================== */
 .header__box-h1 {
   padding: 0 17px;
   position: absolute;
@@ -228,10 +214,43 @@ HEADER => components
   z-index: -2;
 }
 
-/* ===================
+/* ===============================
 MAIN => components
-=================== */
-main .section__mBox input[type=text] {
+=============================== */
+.header__quest .kappaLinkImg,
+.header__quest .armbandLinkImg,
+.header__quest .firLinkImg {
+  position: relative;
+}
+.header__quest .kappaLinkImg:hover::after,
+.header__quest .armbandLinkImg:hover::after,
+.header__quest .firLinkImg:hover::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 13px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: block;
+  width: 200px;
+  height: 150px;
+  border-radius: 11px;
+  z-index: 1;
+}
+.header__quest .kappaLinkImg:hover::after {
+  background-image: url(../img/Kappa.webp);
+}
+.header__quest .armbandLinkImg:hover::after {
+  background-image: url(../img/DEADSKUL.webp);
+}
+.header__quest .firLinkImg:hover::after {
+  background-image: url(../img/fir.webp);
+  height: 55px;
+  top: 50px;
+  left: -150px;
+}
+
+main .section__input input[type=text] {
   padding: 0.3em 0em;
   background-color: transparent;
   border: 0;
@@ -246,16 +265,16 @@ main .section__mBox input[type=text] {
   text-align: center;
   width: 266px;
 }
-main .section__mBox input[type=text]:focus {
+main .section__input input[type=text]:focus {
   outline: none;
 }
-main .section__mBox input[type=text]::-moz-placeholder {
+main .section__input input[type=text]::-moz-placeholder {
   text-align: center;
   color: #37474f;
   text-shadow: none;
   letter-spacing: 1px;
 }
-main .section__mBox input[type=text]::placeholder {
+main .section__input input[type=text]::placeholder {
   text-align: center;
   color: #37474f;
   text-shadow: none;
@@ -269,9 +288,9 @@ main .section__item .itemOk {
   background-color: #144e16;
 }
 
-/* ===================
+/* ===============================
 Small = sm = ≥576px
-=================== */
+=============================== */
 @media (min-width: 576px) {
   .header__palette {
     flex-direction: row;
@@ -288,6 +307,10 @@ Small = sm = ≥576px
     display: flex;
     flex-direction: row;
   }
+  .header__quest .firLinkImg:hover::after {
+    top: 25px;
+    left: -90px;
+  }
   .header__notchItemName {
     padding-left: 26px;
   }
@@ -301,9 +324,9 @@ Small = sm = ≥576px
     margin: 50px 20px 0;
   }
 }
-/* ===================
+/* ===============================
 Medium = md = ≥768px
-=================== */
+=============================== */
 @media (min-width: 768px) {
   .header__palette {
     width: 666px;
@@ -325,17 +348,21 @@ Medium = md = ≥768px
     padding-left: 0;
   }
 }
-/* ===================
+/* ===============================
 Large = lg = ≥992px
-=================== */
+=============================== */
 @media (min-width: 992px) {
   .header__palette {
     width: 700px;
   }
+  .header__quest .firLinkImg:hover::after {
+    top: 25px;
+    left: 0;
+  }
 }
-/* ===================
+/* ===============================
 Extra extra large = xxl = ≥1400px
-=================== */
+=============================== */
 @media (min-width: 1400px) {
   .wrapper {
     margin: 22px auto 0;

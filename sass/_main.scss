@@ -6,11 +6,9 @@
 	padding: 0;
 	text-decoration: none;
 }
-
 html {
 	font-size: 62.5%;
 }
-
 body {
 	background-color: c.$mainBgc;
 	color: c.$mainText;
@@ -19,13 +17,12 @@ body {
 	font-weight: 200;
 	letter-spacing: 0.06em;
 }
-
 a {
 	color: c.$mainLink;
 }
-/* ===================
+/* ===============================
 HEADER
-=================== */
+=============================== */
 .header {
 	&__info {
 		position: relative;
@@ -62,7 +59,6 @@ HEADER
 			width: 285px; // = .header__palette width
 		}
 	}
-
 	&__quest {
 		padding: 2em 1em;
 		background-color: c.$secondBgc;
@@ -70,53 +66,15 @@ HEADER
 		&-info1 {
 			padding-bottom: 0.5em;
 		}
-
 		&-info2 {
 			padding: 1em 0 0;
 		}
-
 		p:nth-child(odd) {
 			font-weight: 700;
 		}
-
 		p:nth-child(even) {
 			padding-left: 1.4em;
 		}
-
-		.kappaLinkImg,
-		.armbandLinkImg,
-		.firLinkImg {
-			position: relative;
-
-			&:hover {
-				&::after {
-					content: '';
-					position: absolute;
-					top: 26px;
-					left: 6%;
-					background-repeat: no-repeat;
-					background-size: 100%;
-					display: block;
-					width: 200px;
-					height: 150px;
-					border-radius: 11px;
-					z-index: 1;
-				}
-			}
-		}
-
-		.kappaLinkImg:hover::after {
-			background-image: url(../img/Kappa.webp);
-		}
-
-		.armbandLinkImg:hover::after {
-			background-image: url(../img/DEADSKUL.webp);
-		}
-		.firLinkImg:hover::after {
-			background-image: url(../img/fir.webp);
-			height: 55px;
-		}
-
 		.ti-info-circle {
 			margin: 0.6em 0;
 			padding-right: 0.2em;
@@ -125,23 +83,34 @@ HEADER
 		}
 	}
 }
-/* ===================
+/* ===============================
 MAIN
-=================== */
+=============================== */
 main {
 	// SECTION 1
 	.section {
-		&__mBox {
-			padding: 2em 0;
-			background-color: c.$bgc1;
+		&__input {
 			display: flex;
 			justify-content: center;
 		}
+		&__youNeed {
+			padding-top: 3em;
+			text-align: center;
+			p:nth-child(1) {
+				font-weight: 700;
+				font-size: 3rem;
+			}
+			p:nth-child(2) {
+				font-style: italic;
+				font-size: 1rem;
+			}
+		}
 	}
-	.sectionPadding {
+	.box {
 		padding: 5rem 0;
+		margin: 66px 0;
+		background-color: c.$bgc1;
 	}
-
 	// SECTION 2
 	.section {
 		&__item {
@@ -190,16 +159,15 @@ main {
 			}
 		}
 	}
-
 	.items {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 }
-/* ===================
+/* ===============================
 FOOTER
-=================== */
+=============================== */
 .footer {
 	margin-top: 77px;
 	background-color: #1e1d22;
@@ -211,10 +179,13 @@ FOOTER
 		width: 100%;
 		max-width: 400px;
 	}
-
 	&__upperText {
 		padding-bottom: 1em;
 		font-weight: 750;
 		color: #ffa03b;
+	}
+	&__bottomText {
+		font-weight: 700;
+		font-size: 2rem;
 	}
 }

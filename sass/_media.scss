@@ -2,9 +2,9 @@
 // Medium = md = ≥768px | Large = lg = ≥992px
 // Extra large = xl = ≥1200px | Extra extra large = xxl = ≥1400px
 
-/* ===================
+/* ===============================
 Small = sm = ≥576px
-=================== */
+=============================== */
 @media (min-width: 576px) {
 	.header {
 		&__palette {
@@ -26,6 +26,13 @@ Small = sm = ≥576px
 			flex-direction: row;
 		}
 
+		&__quest {
+			.firLinkImg:hover::after {
+				top: 25px;
+				left: -90px;
+			}
+		}
+
 		&__notchItemName {
 			padding-left: 26px;
 		}
@@ -45,9 +52,9 @@ Small = sm = ≥576px
 		}
 	}
 }
-/* ===================
+/* ===============================
 Medium = md = ≥768px
-=================== */
+=============================== */
 @media (min-width: 768px) {
 	.header {
 		&__palette {
@@ -78,19 +85,25 @@ Medium = md = ≥768px
 		}
 	}
 }
-/* ===================
+/* ===============================
 Large = lg = ≥992px
-=================== */
+=============================== */
 @media (min-width: 992px) {
 	.header {
 		&__palette {
 			width: 700px;
 		}
+		&__quest {
+			.firLinkImg:hover::after {
+				top: 25px;
+				left: 0;
+			}
+		}
 	}
 }
-/* ===================
+/* ===============================
 Extra extra large = xxl = ≥1400px
-=================== */
+=============================== */
 @media (min-width: 1400px) {
 	.wrapper {
 		margin: 22px auto 0;
