@@ -172,6 +172,7 @@ FOOTER
 	margin-top: 77px;
 	background-color: #1e1d22;
 	text-align: center;
+	user-select: none; // deactivation of mark
 
 	&__wrapper {
 		padding: 2em 1.5em;
