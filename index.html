@@ -53,8 +53,8 @@
                 <div class="header__quest-info2">
                     <p>
                         <i class="ti ti-info-circle"></i>
-                        you have to finish <span class="header__quests"></span> quest and give away <span
-                            class="header__items"></span> items with status <a class="firLinkImg"
+                        you have to finish <span data-allQuestToKappa></span> quest and give away <span
+                            data-allItemsToKappa></span> items with status <a class="firLinkImg"
                             href="https://escapefromtarkov.fandom.com/wiki/Found_in_raid">found in
                             raid</a>
                     </p>
@@ -63,19 +63,25 @@
         </div>
     </header>
     <main>
-        <section class="section sectionPadding box">
-            <div class="section__input">
-                <input type="text" maxlength="15" placeholder="„box” kappa items name" class="kappa_box_name">
-            </div>
+        <section class="section box">
             <div class="section__youNeed">
-                <p>
-                    <span class="header__items"></span>
-                    &minus;
-                    <span class="possessed"></span>
-                    &equals;
-                    <span class="missingItems"></span>
-                </p>
-                <p>all items &minus; possessions &equals; missing items</p>
+                <div class="section__youNeed-boxInput">
+                    <h1>box kappa items name:</h1>
+                    <input type="text" maxlength="11" placeholder="your box name" data-kappaBoxName>
+                </div>
+                <hr>
+                <div class="section__youNeed-boxProgress">
+                    <h1>your progres:</h1>
+                    <p>
+                        <span data-allItemsToKappa></span>
+                        &minus;
+                        <span data-possessedItemsToKappa></span>
+                        &equals;
+                        <span data-missingItemsToKappa></span>
+                    </p>
+                </div>
+                <hr>
+
             </div>
         </section>
         <div class="wrapper">
@@ -124,10 +130,9 @@
                     </div>
                 </div>
                 <!-- Baddies Red Beard -->
-                <div class="section__item ok">
-                    <img src="img/kappa/Baddies_Red_Beard.webp" alt="Baddie's Red Beard"
-                        class="section__item-img imgOk">
-                    <div class="section__item-name itemOk">
+                <div class="section__item">
+                    <img src="img/kappa/Baddies_Red_Beard.webp" alt="Baddie's Red Beard" class="section__item-img">
+                    <div class="section__item-name">
                         <p>
                             <abbr title="Baddie's Red Beard">Baddie</abbr>
                         </p>
@@ -597,17 +602,21 @@
         </div>
     </main>
     <footer class="footer">
+        <div class="footer__btnClear">
+            <button class="btnClear" data-btnClear>if you want restart progress, click me</button>
+        </div>
+        <hr>
         <div class="footer__wrapper">
-            <button class="btn_clear">clear progress</button>
             <p class="footer__upperText">
                 page based on information of <a
-                    href="https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki">wiki EFT</a>
+                    href="https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki">wiki
+                    EFT</a>
                 <br>
                 btw graphics too
             </p>
             <p class="footer__bottomText">
                 &copy;
-                <span class="footer__year"></span>
+                <span data-footerYear></span>
             </p>
         </div>
     </footer>

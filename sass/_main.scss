@@ -87,29 +87,43 @@ HEADER
 MAIN
 =============================== */
 main {
+	.box {
+		margin: 66px 0;
+		background-color: c.$bgc1;
+	}
 	// SECTION 1
 	.section {
+		user-select: none; // deactivation of mark
 		&__input {
 			display: flex;
 			justify-content: center;
 		}
 		&__youNeed {
-			padding-top: 3em;
 			text-align: center;
-			p:nth-child(1) {
-				font-weight: 700;
-				font-size: 3rem;
+
+			hr {
+				height: 7px;
+				background-color: c.$mainBgc;
+				border: none;
 			}
-			p:nth-child(2) {
-				font-style: italic;
-				font-size: 1rem;
+			&-boxInput,
+			&-boxProgress {
+				padding: 1em;
+
+				h1 {
+					padding-bottom: 0.5em;
+				}
+			}
+			&-boxProgress {
+				p {
+					position: relative;
+					font-weight: 700;
+					font-size: 2rem;
+					// transition: 3s;
+					// transition: all 0.3s ease;
+				}
 			}
 		}
-	}
-	.box {
-		padding: 5rem 0;
-		margin: 66px 0;
-		background-color: c.$bgc1;
 	}
 	// SECTION 2
 	.section {
@@ -174,6 +188,32 @@ FOOTER
 	text-align: center;
 	user-select: none; // deactivation of mark
 
+	&__btnClear {
+		padding: 2em 1.5em;
+
+		h1 {
+			padding-bottom: 1em;
+			color: c.$darkRed;
+		}
+		.btnClear {
+			padding: 0.5em 1em;
+			cursor: pointer;
+			background-color: transparent;
+			border: 1px solid c.$secondBgc;
+			border-radius: 5px;
+			font-family: 'Nunito Sans', sans-serif;
+			color: #ff303a;
+			font-weight: 700;
+			font-size: 2rem;
+			letter-spacing: 0.06em;
+			transition: border-bottom 0.6s, color 0.2s, text-shadow 0.4s;
+		}
+	}
+	hr {
+		height: 1px;
+		background-color: c.$mainBgc;
+		border: none;
+	}
 	&__wrapper {
 		padding: 2em 1.5em;
 		margin: 0 auto;

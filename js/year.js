@@ -1,8 +1,8 @@
-const footerYear = document.querySelector('.footer__year');
+const footerYear = document.querySelector('[data-footerYear]');
 // ===============================
 const currentYear = () => {
 	const year = new Date().getFullYear();
 	footerYear.innerText = year;
 };
 // ===============================
-currentYear();
+document.addEventListener('DOMContentLoaded', currentYear);

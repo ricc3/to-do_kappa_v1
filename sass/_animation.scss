@@ -1,0 +1,8 @@
+@keyframes slide-in {
+	from {
+		transform: translateX(-50%) scale(0);
+	}
+	to {
+		transform: translateX(-50%) scale(1);
+	}
+}

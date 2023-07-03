@@ -15,7 +15,6 @@ HEADER => components
 		letter-spacing: 1.5px;
 		line-height: 30px;
 		text-shadow: 1.5px 1.5px 2px #000;
-
 		&::after {
 			content: '';
 			position: absolute;
@@ -27,7 +26,6 @@ HEADER => components
 			border-right: 30px solid transparent;
 			z-index: -2;
 		}
-
 		&::before {
 			content: '';
 			position: absolute;
@@ -70,7 +68,6 @@ MAIN => components
 	.kappaLinkImg:hover::after {
 		background-image: url(../img/Kappa.webp);
 	}
-
 	.armbandLinkImg:hover::after {
 		background-image: url(../img/DEADSKUL.webp);
 	}
@@ -81,71 +78,83 @@ MAIN => components
 		left: -150px;
 	}
 }
+//SECTION 1
 main {
-	// SECTION 1
 	.section {
-		&__input {
-			input[type='text'] {
-				padding: 0.3em 0em;
-				background-color: transparent;
-				border: 0;
-				border-bottom: 2px solid #000;
-				border-bottom-left-radius: 13px;
-				border-bottom-right-radius: 13px;
-				color: c.$mainText;
-				text-shadow: 1.5px 1.5px 2px #000;
-				font-size: 2rem;
-				font-weight: bolder;
-				letter-spacing: 0.2em;
-				text-align: center;
-				width: 266px;
+		&__youNeed {
+			&-boxInput {
+				input[type='text'] {
+					padding: 0.3em 0em;
+					background-color: transparent;
+					border: 0;
+					color: #000;
+					font-size: 3rem;
+					font-weight: bolder;
+					letter-spacing: 0.2em;
+					font-weight: 700;
+					text-align: center;
+					width: 253px;
+				}
+				input[type='text']:focus {
+					outline: none;
+				}
+				input[type='text']::placeholder {
+					text-align: center;
+					color: c.$secondBgc;
+					text-shadow: none;
+					letter-spacing: 1px;
+					font-weight: 700;
+				}
 			}
-
-			input[type='text']:focus {
-				outline: none;
-			}
-
-			input[type='text']::placeholder {
-				text-align: center;
-				color: c.$secondBgc;
-				text-shadow: none;
-				letter-spacing: 1px;
+			&-boxProgress {
+				p:hover::before {
+					content: 'all items - possessions = missing items';
+					position: absolute;
+					top: 42px;
+					left: 50%;
+					transform: translateX(-50%);
+					padding: 0.5em 0.7em;
+					background-color: c.$bgc1;
+					border: 5px solid c.$secondBgc;
+					border-radius: 11px;
+					width: 200px;
+					font-size: 1.2rem;
+					z-index: 22;
+					animation: slide-in 0.2s ease-out forwards;
+				}
+				p:hover::after {
+					content: '';
+					position: absolute;
+					bottom: -15px;
+					left: 50%;
+					transform: translateX(-50%);
+					border-width: 15px;
+					border-style: solid;
+					border-color: transparent transparent c.$secondBgc transparent;
+					animation: slide-in 0.4s ease-out forwards;
+				}
 			}
 		}
 	}
 }
 //SECTION 2
-main {
-	.section__item {
-		.imgOk {
-			filter: grayscale(0);
-		}
-		.itemOk {
-			background-color: c.$darkGreen;
-		}
-	}
-}
+// main {
+// 	.section__item {
+// 		.imgOk {
+// 			filter: grayscale(0);
+// 		}
+// 		.itemOk {
+// 			background-color: c.$darkGreen;
+// 		}
+// 	}
+// }
 /* ===============================
 FOOTER => components
 =============================== */
-
-.btn_clear {
-	margin-bottom: 22px;
-	padding: 0.5em 1em;
-	cursor: pointer;
-	background-color: transparent;
-	border: 0;
-	border-bottom: 1px solid c.$secondBgc;
-	border-radius: 5px;
-	font-family: 'Nunito Sans', sans-serif;
-	color: c.$mainText;
-	font-size: 2rem;
-	letter-spacing: 0.06em;
-	transition: border-bottom 0.6s, color 0.2s, text-shadow 0.4s;
-}
-
-.btn_clear:hover {
-	border-bottom: 1px solid c.$mainLink;
-	color: c.$secondBgc;
-	text-shadow: 1px 1px 2px c.$mainText;
+.footer__btnClear {
+	.btnClear:hover {
+		background-color: c.$mainBgc;
+		border: 1px solid c.$mainLink;
+		color: c.$mainText;
+	}
 }

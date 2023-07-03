@@ -251,15 +251,15 @@ const totalOfTasks = [
 /* ===============================
 variables
 =============================== */
-const headerQuests = document.querySelector('.header__quests');
+const allQuests = document.querySelector('[data-allQuestToKappa]');
 /* ===============================
 functions
 =============================== */
 const allTasks = () => {
-	const tasks = totalOfTasks.length;
-	headerQuests.innerText = tasks;
+	const showTasks = totalOfTasks.length;
+	allQuests.innerText = showTasks;
 };
 /* ===============================
 activation of the function
 =============================== */
-allTasks();
+document.addEventListener('DOMContentLoaded', allTasks);
