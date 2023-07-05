@@ -8,8 +8,8 @@ to-do kappa is a simple website on the principle of an uncomplicated list of thi
 
 - adding the name of the container in which we keep the items
 - information on the: the total number of sentences to be completed / the total number of items to be found
-- ~~shows us how many items we have found from the total pool~~
-- ~~the possibility to mark items as owned / not owned (by default all marked as not owned)~~
+- shows us how many items we have found from the total pool
+- the possibility to mark items as owned / not owned (by default all marked as not owned)
 - by default names of items in the game (when you hover over the item name, it shows the full name of the item)
 - information about the items (link to the official wiki of the game)
 - ~~recording of progress (locally on your computer)~~

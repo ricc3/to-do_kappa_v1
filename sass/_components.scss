@@ -1,8 +1,16 @@
 @use '_colors' as c;
+
+a:hover {
+	color: c.$secondBgc;
+}
 /* ===============================
 HEADER => components
 =============================== */
 .header {
+	a:hover {
+		background-color: #ade4ff;
+		color: c.$secondBgc;
+	}
 	&__box-h1 {
 		padding: 0 17px;
 		position: absolute;
@@ -120,7 +128,7 @@ main {
 					width: 200px;
 					font-size: 1.2rem;
 					z-index: 22;
-					animation: slide-in 0.2s ease-out forwards;
+					animation: slide-in 0.4s ease-out forwards;
 				}
 				p:hover::after {
 					content: '';
@@ -131,30 +139,40 @@ main {
 					border-width: 15px;
 					border-style: solid;
 					border-color: transparent transparent c.$secondBgc transparent;
-					animation: slide-in 0.4s ease-out forwards;
+					animation: slide-in 0.1s ease-out forwards;
 				}
 			}
 		}
 	}
 }
 //SECTION 2
-// main {
-// 	.section__item {
-// 		.imgOk {
-// 			filter: grayscale(0);
-// 		}
-// 		.itemOk {
-// 			background-color: c.$darkGreen;
-// 		}
-// 	}
-// }
+main {
+	.section__item {
+		.iHaveItem {
+			background-color: c.$darkGreen;
+		}
+		.iHaveItemImg {
+			filter: grayscale(0);
+		}
+	}
+}
 /* ===============================
 FOOTER => components
 =============================== */
-.footer__btnClear {
-	.btnClear:hover {
-		background-color: c.$mainBgc;
-		border: 1px solid c.$mainLink;
-		color: c.$mainText;
+.footer {
+	a:hover {
+		background-color: #ade4ff;
+		color: #000;
+	}
+	&__btnClear {
+		.btnClear:hover {
+			background-color: c.$mainBgc;
+			border: 1px solid c.$mainLink;
+			color: c.$mainText;
+		}
+
+		.btnClear:active {
+			color: #000;
+		}
 	}
 }
