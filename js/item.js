@@ -1,60 +1,96 @@
-'use strict';
-// ===============================
-// let
-let sectionItem;
-let items;
-let ok;
-let possessed;
-let missing;
-let itemImg;
-// ===============================
-const main = () => {
-	prepareDOMElements();
-	prepareDOMEvents();
-};
-// ===============================
-const prepareDOMElements = () => {
-	sectionItem = document.querySelectorAll('.section__item'); // allItems: all items number
-	items = document.querySelectorAll('[data-allItemsToKappa'); // allItems: show number all items in box
-	ok = document.querySelectorAll('.iHaveItem'); // myItems: my items
-	possessed = document.querySelector('[data-possessedItemsToKappa]'); // myItems: show number my items in box
-	missing = document.querySelector('[data-missingItemsToKappa]'); // missingItems: show number missing items in box
-	itemImg = document.querySelectorAll('.section__item-img'); // toggle: i have / i don't have items
-};
-const prepareDOMEvents = () => {
-	allItems();
-	myItems();
-	missingItems();
-	itemImg.forEach((img) => {
-		img.addEventListener('click', toggle);
-	});
-};
-// ===============================
-const allItems = () => {
-	const showItems = sectionItem.length;
-	for (let x of items) {
-		x.innerText = showItems;
+const itemImgs = document.querySelectorAll('.section__item-img'); // showAlleItems | toggle
+const allItems = document.querySelectorAll('[data-allItemsToKappa]'); // showAlleItems
+const possessed = document.querySelector('[data-possessedItemsToKappa]'); // myItems
+const missing = document.querySelector('[data-missingItemsToKappa]'); // missingItems
+const btnClearData = document.querySelector('[data-btnClear]'); // clearLocalStorage
+// ===================================================
+// === SHOW ALL ITEMS
+const showAlleItems = () => {
+	const items = itemImgs.length;
+	for (let x of allItems) {
+		x.innerText = items;
 	}
 };
-const myItems = () => {
-	const showItems = ok.length;
-	possessed.innerText = showItems;
+// ===================================================
+// === SAVE LOCALSTORAGE CHECK ITEMS
+const saveToLocalStorage = () => {
+	const iHaveItemImgs = document.querySelectorAll('.iHaveItemImg');
+	const items = [];
+
+	iHaveItemImgs.forEach((img) => {
+		items.push(img.src);
+	});
+
+	localStorage.setItem('saveProgress', JSON.stringify(items));
 };
-const missingItems = () => {
-	const showMissingItems = sectionItem.length - ok.length;
-	missing.innerText = showMissingItems;
+// ===================================================
+// === RETRIEVE FROM LOCAL STORAGE
+const retrieveFromLocalStorage = () => {
+	const savedItems = localStorage.getItem('saveProgress');
+
+	if (savedItems) {
+		const items = JSON.parse(savedItems);
+		const itemImgs = document.querySelectorAll('.section__item-img');
+
+		itemImgs.forEach((img) => {
+			if (items.includes(img.src)) {
+				img.classList.add('iHaveItemImg');
+				img.nextElementSibling.classList.add('iHaveItem');
+			}
+		});
+	}
 };
+// ===================================================
+// === TOGGLE CLASS I HAVE ITMES
 const toggle = (e) => {
 	const itemImg = e.target;
 	const nextElement = e.target.nextElementSibling;
 
-	if (itemImg.matches('.section__item-img')) {
-		itemImg.classList.toggle('iHaveItemImg');
-		nextElement.classList.toggle('iHaveItem');
-	}
-	ok = document.querySelectorAll('.iHaveItem');
+	itemImg.classList.toggle('iHaveItemImg');
+	nextElement.classList.toggle('iHaveItem');
+
+	saveToLocalStorage();
 	myItems();
 	missingItems();
 };
-// ===============================
-document.addEventListener('DOMContentLoaded', main); // run the script after loading
+// ===================================================
+// === I HAVE ITEMS
+const myItems = () => {
+	const items = document.querySelectorAll('.iHaveItemImg');
+	const owneda = items.length;
+	possessed.innerText = owneda;
+	return possessed;
+};
+// ===================================================
+// === MISS ITEMS
+const missingItems = () => {
+	const owned = myItems();
+	const showMissingItems = itemImgs.length - owned.textContent;
+	missing.innerText = showMissingItems;
+};
+// ===================================================
+// === CLEANING UP PROGRESS
+const clearLocalStorage = () => {
+	const iHaveItemImgs = document.querySelectorAll('.iHaveItemImg');
+
+	iHaveItemImgs.forEach((img) => {
+		img.classList.remove('iHaveItemImg');
+		img.nextElementSibling.classList.remove('iHaveItem');
+	});
+
+	localStorage.removeItem('saveProgress');
+	myItems();
+	missingItems();
+};
+// ===================================================
+// === RUN SCRIPTS / FUNCTION
+showAlleItems();
+retrieveFromLocalStorage();
+itemImgs.forEach((img) => {
+	img.addEventListener('click', (e) => {
+		toggle(e);
+	});
+});
+myItems();
+missingItems();
+btnClearData.addEventListener('click', clearLocalStorage);
