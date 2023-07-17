@@ -2,7 +2,7 @@ const itemImgs = document.querySelectorAll('.section__item-img'); // showAlleIte
 const allItems = document.querySelectorAll('[data-allItemsToKappa]'); // showAlleItems
 const possessed = document.querySelector('[data-possessedItemsToKappa]'); // myItems
 const missing = document.querySelector('[data-missingItemsToKappa]'); // missingItems
-const btnClearData = document.querySelector('[data-btnClear]'); // clearLocalStorage
+const clearButton = document.querySelector('[data-btnClear]');
 // ===================================================
 // === SHOW ALL ITEMS
 const showAlleItems = () => {
@@ -21,12 +21,12 @@ const saveToLocalStorage = () => {
 		items.push(img.src);
 	});
 
-	localStorage.setItem('saveProgress', JSON.stringify(items));
+	localStorage.setItem('saveItems', JSON.stringify(items));
 };
 // ===================================================
 // === RETRIEVE FROM LOCAL STORAGE
 const retrieveFromLocalStorage = () => {
-	const savedItems = localStorage.getItem('saveProgress');
+	const savedItems = localStorage.getItem('saveItems');
 
 	if (savedItems) {
 		const items = JSON.parse(savedItems);
@@ -78,7 +78,7 @@ const clearLocalStorage = () => {
 		img.nextElementSibling.classList.remove('iHaveItem');
 	});
 
-	localStorage.removeItem('saveProgress');
+	localStorage.removeItem('saveItems');
 	myItems();
 	missingItems();
 };
@@ -93,4 +93,4 @@ itemImgs.forEach((img) => {
 });
 myItems();
 missingItems();
-btnClearData.addEventListener('click', clearLocalStorage);
+clearButton.addEventListener('click', clearLocalStorage);
