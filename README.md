@@ -12,7 +12,7 @@ to-do kappa is a simple website on the principle of an uncomplicated list of thi
 - the possibility to mark items as owned / not owned (by default all marked as not owned)
 - by default names of items in the game (when you hover over the item name, it shows the full name of the item)
 - information about the items (link to the official wiki of the game)
-- ~~recording of progress (locally on your computer)~~
+- recording of progress (locally on your computer)
 - saving the name of the container in which we keep the items (locally on your computer)
 
 ## technologies
