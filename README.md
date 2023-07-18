@@ -33,4 +33,4 @@ the entire project is based on information and graphics from the **[official wik
 
 Free Software, Hell Yeah!
 
-## [website](https://ricc3.github.io/to-do_kappa/)
+## [website](https://ricc3.github.io/to-do_kappa_v1/)
